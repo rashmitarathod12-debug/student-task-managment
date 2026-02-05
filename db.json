@@ -1,1 +1,28 @@
-{}
+{
+    "tasks":[
+        {
+            "id":1,
+            "title":"welcome task",
+            "date": "2026-02-10",
+            "description": "This is your tasks served from json-server",
+            "completed":false,
+            "priority": "medium"
+        },
+        {
+            "id":2,
+            "title":"welcome task 2",
+            "date": "2026-02-10",
+            "description": "This is your tasks served from json-server",
+            "completed":false,
+            "priority": "high"
+        },
+        {
+            "id":3,
+            "title":"welcome task 3",
+            "date": "2026-02-10",
+            "description": "This is your tasks served from json-server",
+            "completed":false,
+            "priority": "high"
+        }
+    ]
+}

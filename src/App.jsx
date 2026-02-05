@@ -1,19 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from './components/Header'
-import Register from './pages/register'
+import "./App.css";
+import {
+  createBrowserRouter,
+  Navigate,
+  NavLink,
+  RouterProvider,
+} from "react-router-dom";
+import Register from "./pages/register";
+import Login from "./pages/login";
+import Dashboard from "./pages/Dashboard";
+import AuthGuard from "./Auth/AuthGuard";
+
+
+const DefaultRoute = () => {
+  const authData = JSON.parse(localStorage.getItem("authData"));
+  //console.log(logindata)
+  if (authData) {
+    return <Navigate to="/dashboard" replace />;
+  }
+  return <Navigate to="/login" replace />;
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+  const router = createBrowserRouter([
+    {
+      path:"/",
+      element: <DefaultRoute/>
+    },
+    {
+      path: "/login",
+      element: (<AuthGuard
+       required ={false}>
+        <Login />
+        </AuthGuard>
+    ),
 
-  return (
-    <>
-    <Header/>
-    <Register/>
-    </>
-  )
+    },
+    {
+      path: "/register",
+      element: (<AuthGuard required ={false}>
+        <Register />
+      </AuthGuard>
+      ),
+    },
+    {
+      path:"/dashboard",
+      element:(<AuthGuard required ={true}>
+        <Dashboard/>
+        </AuthGuard>
+      ),
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
-
-export default App
+export default App;
