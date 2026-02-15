@@ -2,7 +2,6 @@ import "./App.css";
 import {
   createBrowserRouter,
   Navigate,
-  NavLink,
   RouterProvider,
 } from "react-router-dom";
 import Register from "./pages/register";

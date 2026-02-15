@@ -1,41 +1,60 @@
 import React from "react";
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({ tasks , editingTask,deletingTask}) => {
+
+  const handleEditClick = (tasks) =>{
+    editingTask(tasks)
+  }
+
+  const handleDeleteClick = (taskId) =>{
+    deletingTask(taskId)
+  }
   return (
     <>
-    <div className="task-grid">
-      {tasks.map((task) => {
-        <div className="task-card" key={task.id}>
-          <h1>{task.title}</h1>
-          <p>{task.description}</p>
+      <div className="task-grid">
+        {/* Task Cars 1 */}
+        {tasks.map((tasks) => (
+          <div className="task-card" style={{ position: "relative" }}>
+            <h3>{tasks.title}</h3>
+            <p>{tasks.description}</p>
 
-          <div className="task-meta">
-            <span>Date: {task.date}</span>
-            <span className={`priority-badge priority-${task.priority}`}>
-              {task.priority}
-            </span>
+            <div className="task-meta">
+              <span>Due: 2026-02-10</span>
+              <span className="priority-badge priority-high">
+                {tasks.priority}
+              </span>
+            </div>
+
+            <div className="task-actions">
+              <button
+                className="btn-icon"
+                style={{ background: "#00d2ff" }}
+                title="Edit Task"
+                onClick={() => handleEditClick(tasks)}
+              >
+                ✏️
+              </button>
+
+              <button
+                className="btn-icon"
+                style={{ background: "#00b894" }}
+                title="Mark Complete"
+              >
+                ✔️
+              </button>
+
+              <button
+                className="btn-icon"
+                style={{ background: "#ff416c" }}
+                title="Delete Task"
+                onClick={()=>handleDeleteClick(tasks.id)}
+              >
+                🗑️
+              </button>
+            </div>
           </div>
-
-          <div className="task-actions">
-            <button
-              className="btn-icon"
-              style={{ background: "#002cff" }}
-              title="edit-task"
-            >
-              edit
-            </button>
-
-            <button
-              className="btn-icon"
-              style={{ background: "#ff2c2c" }}
-              title="delete-task"
-            >
-              Delete
-            </button>
-          </div>
-        </div>
-      })}
-    </div>
+        ))}
+      </div>
     </>
   );
 };

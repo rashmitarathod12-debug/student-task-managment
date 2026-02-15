@@ -86,7 +86,7 @@ const validate = () =>{
             type="text"
             id="name"
             name="name"
-            value={formdata.name}
+            value={formdata.name} 
             placeholder="Enter your full name"
             onChange={handleInputChange}
           />

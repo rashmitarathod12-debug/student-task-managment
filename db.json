@@ -1,28 +1,37 @@
 {
-    "tasks":[
-        {
-            "id":1,
-            "title":"welcome task",
-            "date": "2026-02-10",
-            "description": "This is your tasks served from json-server",
-            "completed":false,
-            "priority": "medium"
-        },
-        {
-            "id":2,
-            "title":"welcome task 2",
-            "date": "2026-02-10",
-            "description": "This is your tasks served from json-server",
-            "completed":false,
-            "priority": "high"
-        },
-        {
-            "id":3,
-            "title":"welcome task 3",
-            "date": "2026-02-10",
-            "description": "This is your tasks served from json-server",
-            "completed":false,
-            "priority": "high"
-        }
-    ]
+  "tasks": [
+    {
+      "id": "1",
+      "title": "welcome task",
+      "date": "2026-02-06",
+      "Description": "This is your tasks served from json-server",
+      "completed": false,
+      "priority": "medium"
+    },
+    {
+      "id": "1d3b",
+      "title": "asd",
+      "description": "asd",
+      "duedate": "2026-02-06",
+      "priority": "Medium",
+      "completed": false,
+      "dueDate": "2026-02-15"
+    },
+    {
+      "id": "06b7",
+      "title": "as",
+      "description": "as",
+      "dueDate": "2026-02-15",
+      "priority": "Medium",
+      "completed": false
+    },
+    {
+      "id": "2d7f",
+      "title": "as",
+      "description": "as",
+      "dueDate": "2026-02-15",
+      "priority": "Medium",
+      "completed": false
+    }
+  ]
 }
